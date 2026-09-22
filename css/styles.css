@@ -105,6 +105,11 @@
     transition: color 0.15s ease;
   }
   nav.links a:hover { color: var(--accent); }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
   .nav-cta {
     display: inline-flex;
     flex-direction: column;
@@ -125,6 +130,32 @@
     font-size: 0.72rem;
     font-weight: 500;
   }
+  .whatsapp-cta {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #25d366;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .whatsapp-cta:hover {
+    background: #1da851;
+    transform: translateY(-1px);
+  }
+  .whatsapp-cta svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+  .whatsapp-cta:focus-visible,
+  .nav-cta:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    outline-offset: 3px;
+  }
   @keyframes call-now-blink {
     0%, 100% { opacity: 1; box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); }
     50% { opacity: 0.78; box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 0%, transparent); }
@@ -134,6 +165,9 @@
   }
   @media (max-width: 720px) {
     nav.links { display: none; }
+    .nav-inner { padding-left: 16px; padding-right: 16px; }
+    .nav-actions { gap: 6px; }
+    .nav-cta { padding-left: 10px; padding-right: 10px; }
   }
 
   /* ---------- Hero ---------- */
